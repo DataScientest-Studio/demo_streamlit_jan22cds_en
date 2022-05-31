@@ -24,9 +24,9 @@ def train_model(model_choisi, X_train, y_train, X_test, y_test) :
 
 def demo_streamlit():
     ### Mettre des titres
-    st.title("mon premier streamlit en machien learning")
+    st.title("mon premier streamlit en machine learning")
 
-    st.subheader("par Emilie, Fred et... DataScientest")
+    st.subheader("Par la team de DataScientest")
 
     ### Mettre une image 
 
