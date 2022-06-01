@@ -1,70 +1,76 @@
 # Streamlit Demo
 
 ## Why Streamlit:
-Le Pipeline classique de travail en Data Science est le suivant:
+The classic data science workflow is as follows:
 
 ![Workflow_data_scientist](/assets/streamlit_1.png "Pipeline MLOPS")
 
-Streamlit est une librairie python (on parle souvent de framework) qui permet de créer de très belles interfaces graphiques d’applications en très peu de temps.
+**Streamlit** is a python library (often referred to as a framework) that allows you to create beautiful graphical application interfaces in a very short time.
 
-Streamlit va agir comme une interface entre le langage Python et d’autres librairies \ langages (exemple  HTML, CSS, Javascript, etc).
+Streamlit acts **as a web interface** between the Python language and other libraries (e.g. HTML, CSS, Javascript, etc).
 
-A partir du moment où l’on va vouloir créer une interface graphique utilisateur on va pouvoir se servir de streamlit pour visuellement communiquer avec les différentes parties prenantes de l’entreprise.
+From the moment we want to create a graphical user interface, we can use Streamlit to visually communicate with the various stakeholders in the company.
 
-## Généralités sur Streamlit:
-Quelques possibilités avec streamlit:
+## General information about Streamlit:
+Some possibilities with streamlit:
 
 ![Fonctions de streamlit](/assets/streamlit_2.png)
 
-## Installation de Streamlit:
+## Streamlit installation:
 
-Ce dont vous allez avoir besoin:
-* Editeur de text
-* Commande d’installation: 
+What you will need:
+* Text editor
+* Installation command below:
 
 ``` python
 Pip install streamlit 
 #(pipenv install streamlit dans une environnement virtuel)
 ```
 
-## Méthodologie de développement d’une application:
+## Methodology for developing an application:
 
-Une méthodologie de travail possible:
+A possible working methodology:
 
-1. Design de la fenêtre de l’application
+1. **Design of the application window**: 
 
-La première étape est le design de la fenêtre de l’application (voir ci-dessous).
+The first step is the design of the application window (see below).
 
 ![Visuel de l'application](/assets/streamlit_3.png)
 
-→ Être imaginatif: Imaginer le ‘look’ de votre futur application (couleurs, dispositions, menus, contenu etc.)
+→ Be imaginative: Imagine the 'look' of your future app (colours, layouts, menus, content etc.)
 
-## Design de l’architecture:
+2. **Designing the architecture**:
 
-La deuxième étape **n’est pas l’écriture de lignes de code** mais le design de l’architecture de l’application.
+The second step **is not writing lines of code** but designing the architecture of the application.
 
-Schématiser l’ensemble des fichiers et les relations entre ces derniers (design de l'architecture du répertoire du code).
+Draw the relationships between a set of files (design of the code directory architecture).
 
 *Ex:*
-![Visuel de l'application](/assets/streamlit_4.png)
 
-Une fois la fenêtre et l’architecture en tête, il est désormais plus facile d’écrire le code correspondant.
+![File relationship](/assets/streamlit_4.png)
 
+Once you have the window and the architecture in mind, it is easier to write the corresponding code.
 
-## Exploration de streamlit:
-Go démo 👉
+## How to launch the demo:
 
-## Launch the demo:
-
-1. Aller dans le répertoire app:
+1. **Go to the app directory:**
 
 ``` bash
 # Change directory
 cd app
 ```
-2. lancer le script `app.py`:
+2. **Run the `app.py` script:**
 
 ``` python
 # Run streamlit app
 streamlit run app.py
 ```
+
+## Exploration de streamlit:
+Go demo 👉
+
+## Additionnal ressources:
+___
+1. https://docs.streamlit.io/library/get-started/main-concepts
+2. https://docs.streamlit.io/streamlit-cloud/get-started/deploy-an-app
+3. [Streamlit example](https://towardsdatascience.com/streamlit-hands-on-features-and-tips-for-enhanced-app-user-experience-aef7be8035fa#:~:text=Streamlit%20is%20a%20free%2C%20open-source%2C%20all-python%20framework%20that,gained%20popularity%20among%20data%20science%20practitioners%20and%20enthusiasts.)

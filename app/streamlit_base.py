@@ -6,17 +6,22 @@ def bases_streamlit():
     # TEXT
     # titre
     st.title("Streamlit crash course")
+
     # texte
     st.text("This is a text")
+
     # header \ subheader
     st.header("This is a header")
     st.subheader('This a subheader')
+
     # MARKDOWN
     st.markdown("## This is a markdown")
+
     # Link
     st.markdown('[link](https://google.com)')
     
-    # Ecrire avec du HTML
+    # Write HTML
+    st.write("HTML")
     html_page = """
     <div style="background-color:green;padding:50px">
         <p style="font-size:50px">Streamlit is awesome</p>
@@ -34,6 +39,8 @@ def bases_streamlit():
     #st.markdown(html_form, unsafe_allow_html=True)
     
     # Alert text
+    st.write("Alert text")
+
     st.success("Success!")
     st.info("Iformation")
     st.warning("Un warning!")
@@ -41,9 +48,14 @@ def bases_streamlit():
     
     ## MEDIA
     # Image
+    # import Image function
     from PIL import Image
     st.write("ouverture d'une image:")
+
+    # open an image
     img = Image.open("OIP (2).jpeg")
+
+    # Plot the image
     st.image(img, caption="DataScientest")
     
     # Audio
@@ -57,10 +69,11 @@ def bases_streamlit():
     
     ### WIDGET
     st.subheader("Let's talk about widgets")
+
     # Bouton
     st.button("Press ME")
     
-    # Utilisation
+    # getting interaction button
     if st.button("Appuyer"):
         st.success("Même pas mal!")
     
@@ -69,31 +82,32 @@ def bases_streamlit():
         st.success("showing")
     
     # Radio
-    genre = st.radio("Sélectionner un genre", ["homme", "femme"])
-    if genre =="femme":
-        st.info("c'est une femme")
+    gender_list = ["Man", "Woman"]
+    gender = st.radio("Sélectionner un genre", gender_list)
+    if gender == gender_list[0]:
+        st.info(f"gender is {gender}")
     
     # Select
-    location = st.selectbox("Votre Métier", ["Data Scientist", "Dentiste", "Câlineur professionnelle"])
+    location = st.selectbox("Your Job", ["Data Scientist", "Dentist", "Doctor"])
     
     # Multiselect
     liste_course = st.multiselect("liste de course",
                                     ["tomates", "dentifrice", "écouteurs"])
     
     # Text imput
-    name = st.text_input("Votre nom", "entre ici")
+    name = st.text_input("your name", "your name here")
     st.text(name)
     
     # Number input
     age = st.number_input("Age", 5, 100)
     
     # text area
-    message = st.text_area("Entrer votre message")
+    message = st.text_area("Enter your message")
     
     # Slider
-    niveau = st.slider("Votre niveau", 2, 6)
+    niveau = st.slider("select the level", 2, 6)
     
     # Ballons
     if st.button("Press me again"):
-        st.write("Yesss!")
+        st.write("Yesss, you'r ready!")
         st.balloons()

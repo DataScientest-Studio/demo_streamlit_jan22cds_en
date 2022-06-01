@@ -24,78 +24,83 @@ def train_model(model_choisi, X_train, y_train, X_test, y_test) :
     return score
 
 def demo_streamlit():
-    ### Mettre des titres
-    st.title("mon premier streamlit en machine learning")
 
-    st.subheader("Par la team de DataScientest")
+    ### Create Title
+    st.title("My first Machien Learning Web app with Streamlit")
+    st.subheader("By DataScientest team")
 
-    ### Mettre une image 
-
+    ### Add a picture
+    st.write("Below is a picture of the Titanic:")
     st.image("titanic.jpeg")
 
 
-    ### Mettre du markdown 
+    ### using Markdown
+    st.markdown("### We will use the well famous titanic dataset for our study. Can we predict who survived?")
 
-    st.markdown("## Nous allons utilisé les données des passagers du titanic")
+    ### reading dataset
+    # Normally, you will store all the necessary path and env variables in a .env file
+    dataset_path = '../data/titanic.csv'
+    df = pd.read_csv(dataset_path)
 
-    ### Lecture du fichier csv et affichage 
 
-    df = pd.read_csv('../data/titanic.csv')
-
-
-    ### Mettre du code 
-    st.text("import des données avec la commande: ")
+    ### Showing code
+    st.text("importing dataset with the folowing command: ")
     with st.echo(): 
-        df = pd.read_csv('titanic.csv')
+        df = pd.read_csv(dataset_path)
 
 
-    ### Afficher les données 
+    ### Showing the data
+    if st.checkbox("Showing the data") :
+        line_to_plot = st.slider("select le number of lines to show", min_value=3, max_value=df.shape[0])
+        st.dataframe(df.head(line_to_plot))
 
-    if st.checkbox("Afficher les données") : 
-        st.dataframe(df)
-
-    if st.checkbox("Afficher les données manquantes") : 
+    if st.checkbox("Missing values") : 
         st.dataframe(df.isna().sum())
 
 
     ### Preprocessing 
 
-
+    # Drop Missing values
     df = df.dropna()
 
+    # Drop some columns
     df = df.drop(['sex', 'title', 'cabin', 'embarked'], axis = 1)
 
+    # Select the target
     y = df['survived']
 
+    # Select the features
     X = df.drop('survived', axis =1 )
 
+    # select how to split the data
     train_size = st.sidebar.slider(label = "Choix de la taille de l'échantilllon de train", min_value = 0.2, max_value = 1.0, step = 0.05)
 
+    # Splitting the data
     X_train, X_test, y_train, y_test = train_test_split(X, y, train_size = train_size)
 
 
-    ### Afficher un graphique 
-
-    st.text('Graphique')
-
+    ### Display graph
+    st.text('Class distribution with seaborn')
     st.set_option('deprecation.showPyplotGlobalUse', False)
-
     sns.countplot(df['pclass'])
-
     st.pyplot()
+
     ### Classification 
 
-
+    #  Baseline model
     model = LogisticRegression() 
 
+    # Model training
     model.fit(X_train, y_train)
 
-    st.write("Score test with logisitic regression" , model.score(X_test,y_test))
+    # Benchmark Model evaluation
+    st.write("Logisitic regression accuracy (Benchmark):" , model.score(X_test,y_test))
+
+    # Other models
+    model_list = ['Decision Tree', 'KNN']
+    model_choisi = st.selectbox(label = "choix de modèle" , options = model_list)
 
 
-
-    model_choisi = st.selectbox(label = "choix de modèle" , options = ['Regression Logisitic', 'Decision Tree', 'KNN'])
-
-
-    # Entrainement du dmoèle
+    # Showing the accuracy for the orthers models (for comparison)
+    st.write("Accuracy for some models for comparison: ")
     st.write("Score test", train_model(model_choisi, X_train, y_train, X_test, y_test))
