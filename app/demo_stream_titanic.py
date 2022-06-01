@@ -10,6 +10,7 @@ from sklearn.tree import DecisionTreeClassifier
 from sklearn.neighbors import KNeighborsClassifier
 
 # Custom function
+# st.cache is used to load the function into memory
 @st.cache
 def train_model(model_choisi, X_train, y_train, X_test, y_test) :
     if model_choisi == 'Regression Logisitic' : 
@@ -39,7 +40,7 @@ def demo_streamlit():
 
     ### Lecture du fichier csv et affichage 
 
-    df = pd.read_csv('titanic.csv')
+    df = pd.read_csv('../data/titanic.csv')
 
 
     ### Mettre du code 
