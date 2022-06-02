@@ -21,7 +21,7 @@ def bases_streamlit():
     st.markdown('[link](https://google.com)')
     
     # Write HTML
-    st.write("HTML")
+    st.write("You can write HTML")
     html_page = """
     <div style="background-color:green;padding:50px">
         <p style="font-size:50px">Streamlit is awesome</p>
