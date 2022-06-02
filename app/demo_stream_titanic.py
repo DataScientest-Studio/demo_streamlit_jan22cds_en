@@ -26,7 +26,8 @@ def train_model(model_choisi, X_train, y_train, X_test, y_test) :
 def demo_streamlit():
 
     ### Create Title
-    st.title("My first Machien Learning Web app with Streamlit")
+    st.title("Streamlit Machine Learning Web app with Streamlit")
+    st.header("This a start")
     st.subheader("By DataScientest team")
 
     ### Add a picture
@@ -94,7 +95,7 @@ def demo_streamlit():
     model.fit(X_train, y_train)
 
     # Benchmark Model evaluation
-    st.write("Logisitic regression accuracy (Benchmark):" , model.score(X_test,y_test))
+    st.write("Logisitic regression accuracy (This is my Benchmark):" , model.score(X_test,y_test))
 
     # Other models
     model_list = ['Decision Tree', 'KNN']

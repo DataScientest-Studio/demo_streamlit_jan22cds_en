@@ -5,26 +5,26 @@ def bases_streamlit():
     # streamlit features
     # TEXT
     # titre
-    st.title("Streamlit crash course")
+    st.title("Streamlit crash course 101:")
 
     # texte
-    st.text("This is a text")
+    st.text("This simply show a text")
 
     # header \ subheader
-    st.header("This is a header")
-    st.subheader('This a subheader')
+    st.header("This is a Header")
+    st.subheader('This a Subheader')
 
     # MARKDOWN
     st.markdown("## This is a markdown")
 
     # Link
-    st.markdown('[link](https://google.com)')
+    st.markdown('[Google link](https://google.com)')
     
     # Write HTML
     st.write("You can write HTML")
     html_page = """
     <div style="background-color:green;padding:50px">
-        <p style="font-size:50px">Streamlit is awesome</p>
+        <p style="font-size:50px">Streamlit is very awesome</p>
     </div>
     """
     st.markdown(html_page, unsafe_allow_html=True)
@@ -42,7 +42,7 @@ def bases_streamlit():
     st.write("Alert text")
 
     st.success("Success!")
-    st.info("Iformation")
+    st.info("Information")
     st.warning("Un warning!")
     st.error("Une erreur")
     
@@ -74,8 +74,8 @@ def bases_streamlit():
     st.button("Press ME")
     
     # getting interaction button
-    if st.button("Appuyer"):
-        st.success("Même pas mal!")
+    if st.button("Press Me again"):
+        st.success("this is a success!")
     
     # Checkbox
     if st.checkbox("Hide & seek"):
