@@ -27,7 +27,7 @@ def demo_streamlit():
 
     ### Create Title
     st.title("Streamlit Machine Learning Web app with Streamlit")
-    st.header("This a start")
+    st.header("The beginning of a great adventure")
     st.subheader("By DataScientest team")
 
     ### Add a picture
@@ -99,7 +99,7 @@ def demo_streamlit():
 
     # Other models
     model_list = ['Decision Tree', 'KNN']
-    model_choisi = st.selectbox(label = "choix de modèle" , options = model_list)
+    model_choisi = st.selectbox(label = "Select a model" , options = model_list)
 
 
     # Showing the accuracy for the orthers models (for comparison)
